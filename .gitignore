@@ -1,0 +1,22 @@
+# Cache and compiler files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment configurations and private keys
+.env
+.env.*
+
+# Local data cache and databases
+data/mne_mock/
+data/tribe_cache/
+data/brain_plots/
+data/audio_records/
+data/voice_agent.db
+data/interaction_logs.csv
+data/temp_question.wav
+data/temp_response.wav
+
+# Local OS files
+.DS_Store
+Thumbs.db
