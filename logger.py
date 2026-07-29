@@ -260,7 +260,7 @@ def write_docx_report(question: str, variants: list[dict], selected: dict, archi
         min_score = min(v["score"] for v in variants)
         
         # Width configurations (Total = 7.3 Inches of printable width)
-        col_widths = [Inches(0.7), Inches(3.5), Inches(0.6), Inches(0.6), Inches(0.45), Inches(0.45), Inches(0.45), Inches(0.45)]
+        col_widths = [Inches(0.6), Inches(3.5), Inches(0.6), Inches(0.7), Inches(0.45), Inches(0.45), Inches(0.45), Inches(0.45)]
         
         table = doc.add_table(rows=1, cols=8)
         table.style = 'Light Shading Accent 1'
@@ -289,7 +289,7 @@ def write_docx_report(question: str, variants: list[dict], selected: dict, archi
                 run.bold = bold
                 
         hdr_cells = table.rows[0].cells
-        headers = ['Rank', 'Phrasing Variant', 'Score', 'Delta', 'PFC', 'Amy', 'Temp', 'NAcc']
+        headers = ['Rank', 'Phrasing Variant', 'Score', 'Delta', 'PFC', 'Amy', 'Tmp', 'NAc']
         for idx, h_text in enumerate(headers):
             style_cell(hdr_cells[idx], h_text, col_widths[idx], bold=True, align=WD_ALIGN_PARAGRAPH.LEFT if idx == 1 else WD_ALIGN_PARAGRAPH.CENTER, pad=(idx == 1))
             

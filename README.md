@@ -107,5 +107,5 @@ python main.py
 ```
 *Options:*
 - `python main.py --text` — Skip mic and type question in the terminal.
-- `python main.py --duration 8` — Capture audio for 8 seconds.
+- `python main.py --duration 15` — Capture audio for 15 seconds (default).
 - `python main.py --no-play` — Process and log the query silently.
