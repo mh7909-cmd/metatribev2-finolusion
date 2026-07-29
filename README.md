@@ -86,8 +86,11 @@ pip install -r requirements.txt
 Create a `.env` file in the root folder:
 ```env
 NVIDIA_API_KEY=nvapi-YOUR_NVIDIA_API_KEY_HERE
+HF_TOKEN=hf_YOUR_HUGGING_FACE_TOKEN_HERE
 ```
-*If no API key is specified, the application falls back gracefully to local text-input mode, mock variant generation, local heuristics scoring, and local text-to-speech fallback.*
+*Notes:*
+- **NVIDIA_API_KEY:** Required to access the Nvidia Cloud APIs for LLM generation, ASR, and TTS. If not provided, the application operates in offline simulation fallback.
+- **HF_TOKEN:** Only required if you change `USE_OFFICIAL_MODEL = True` in `config.py` to run the official heavy local Meta `facebook/tribev2` neural model (requires downloading the model from Hugging Face).
 
 ---
 
