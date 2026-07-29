@@ -260,7 +260,7 @@ def write_docx_report(question: str, variants: list[dict], selected: dict, archi
         min_score = min(v["score"] for v in variants)
         
         # Width configurations (Total = 7.3 Inches of printable width)
-        col_widths = [Inches(0.6), Inches(3.5), Inches(0.7), Inches(0.7), Inches(0.45), Inches(0.45), Inches(0.45), Inches(0.45)]
+        col_widths = [Inches(0.7), Inches(3.5), Inches(0.6), Inches(0.6), Inches(0.45), Inches(0.45), Inches(0.45), Inches(0.45)]
         
         table = doc.add_table(rows=1, cols=8)
         table.style = 'Light Shading Accent 1'
@@ -297,7 +297,7 @@ def write_docx_report(question: str, variants: list[dict], selected: dict, archi
         sorted_vars = sorted(variants, key=lambda x: x["score"], reverse=True)
         for i, var in enumerate(sorted_vars, 1):
             row_cells = table.add_row().cells
-            rank_text = "★ #1\n(Winner)" if i == 1 else f"#{i}"
+            rank_text = "★ #1\nWinner" if i == 1 else f"#{i}"
             style_cell(row_cells[0], rank_text, col_widths[0], bold=(i == 1), align=WD_ALIGN_PARAGRAPH.CENTER, pad=False)
             # Use full text without ellipsis, but justify-aligned for clean boundaries
             style_cell(row_cells[1], var["text"], col_widths[1], align=WD_ALIGN_PARAGRAPH.JUSTIFY, pad=True)
